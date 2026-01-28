@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.min.css">
+  <link rel="stylesheet" href="../dist/index.css"></link>
+  <script type="importmap">
+    {
+      "imports": {
+        "jodit": "../node_modules/jodit/esm/index.js",
+        "jodit/plugins/all": "../node_modules/jodit/esm/plugins/all.js",
+        "jodit-plugin-video-props": "../dist/index.module.mjs"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Jodit } from 'jodit';
+    import 'jodit/plugins/all';
+    import 'jodit-plugin-video-props';
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['source'],
+        sourceEditor: 'area'
+      });
+      jodit.selection.insertHTML('<video controls src="https://download.samplelib.com/mp4/sample-5s.mp4" width="300px"></video>');
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor"></textarea>
+</body>
+</html>

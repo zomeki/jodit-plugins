@@ -1,0 +1,2 @@
+"use strict";var t=require("jodit");class s{init(t){this.jodit=t,this.onFocusFunc=this.onFocus.bind(this),t.events.on("focus",this.onFocusFunc)}destruct(){this.jodit.events.off("focus",this.onFocusFunc),t.Jodit.currentInstance===this.jodit&&(t.Jodit.currentInstance=null)}onFocus(s){t.Jodit.currentInstance=this.jodit}}t.Jodit.plugins.add("current-instance",s),module.exports=s;
+//# sourceMappingURL=index.js.map

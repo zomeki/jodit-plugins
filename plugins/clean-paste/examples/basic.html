@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.min.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "jodit": "../node_modules/jodit/esm/index.js",
+        "jodit/plugins/all": "../node_modules/jodit/esm/plugins/all.js",
+        "jodit-plugin-clean-patch": "../dist/index.module.mjs"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Jodit } from 'jodit';
+    import 'jodit/plugins/all';
+    import 'jodit-plugin-clean-patch';
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit1 = Jodit.make('#editor1', {
+        buttons: ['source'],
+        sourceEditor: 'area',
+        askBeforePasteHTML: false,
+        defaultActionOnPaste: 'insert_by_clean_paste',
+        processPasteFromWord: true,
+        askBeforePasteFromWord: false,
+        defaultActionOnPasteFromWord: 'insert_by_clean_paste'
+      });
+
+      const jodit2 = Jodit.make('#editor2', {
+        buttons: ['source'],
+        sourceEditor: 'area',
+        askBeforePasteHTML: false,
+        defaultActionOnPaste: 'insert_clear_html',
+        processPasteFromWord: true,
+        askBeforePasteFromWord: false,
+        defaultActionOnPasteFromWord: 'insert_as_text'
+      });
+    });
+</script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <p>Please paste a table including merged cells from html or word:</p>
+  <h2>custom paste</h2>
+  <textarea id="editor1"></textarea>
+  <table>
+    <tr>
+      <td rowspan="2">cell 1</td>
+      <td>cell 2</td>
+      <td>cell 3</td>
+    </tr>
+    <tr>
+      <td colspan="2">cell 4</td>
+    </tr>
+  </table>
+
+  <h2>default paste</h2>
+  <textarea id="editor2"></textarea>
+  <table>
+    <tr>
+      <td rowspan="2">cell 1</td>
+      <td>cell 2</td>
+      <td>cell 3</td>
+    </tr>
+    <tr>
+      <td colspan="2">cell 4</td>
+    </tr>
+  </table>
+</body>
+</html>

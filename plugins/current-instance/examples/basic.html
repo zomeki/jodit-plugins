@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.min.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "jodit": "../node_modules/jodit/esm/index.js",
+        "jodit/plugins/all": "../node_modules/jodit/esm/plugins/all.js",
+        "jodit-plugin-current-instance": "../dist/index.module.mjs"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Jodit } from 'jodit';
+    import 'jodit/plugins/all';
+    import 'jodit-plugin-current-instance';
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit1 = Jodit.make('#editor1', {
+        buttons: ['source'],
+        sourceEditor: 'area'
+      });
+      const jodit2 = Jodit.make('#editor2', {
+        buttons: ['source'],
+        sourceEditor: 'area'
+      });
+      setInterval(() => {
+        const current = document.querySelector('#current');
+        current.innerHTML = Jodit.currentInstance?.id;
+      }, 1000)
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor1"></textarea>
+  <textarea id="editor2"></textarea>
+  <div id="current"></div>
+</body>
+</html>

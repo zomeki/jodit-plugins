@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.min.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "jodit": "../node_modules/jodit/esm/index.js",
+        "jodit/plugins/all": "../node_modules/jodit/esm/plugins/all.js",
+        "jodit-plugin-empty-block-eraser": "../dist/index.module.mjs"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Jodit } from 'jodit';
+    import 'jodit/plugins/all';
+    import 'jodit-plugin-empty-block-eraser';
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['source'],
+        sourceEditor: 'area'
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor"></textarea>
+</body>
+</html>

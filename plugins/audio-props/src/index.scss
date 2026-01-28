@@ -1,0 +1,11 @@
+.jodit-ui-form__audio-properties {
+  padding: 8px;
+
+  .jodit-ui-form__width,
+  .jodit-ui-form__height {
+    .jodit-ui-input__wrapper {
+      min-width: 6rem;
+      max-width: 6rem;
+    }
+  }
+}

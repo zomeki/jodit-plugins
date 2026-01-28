@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,oBACE,6CAAsC,CAAtC,qCACF","file":"index.css","sourcesContent":[".jodit-wysiwyg [id] {\n  text-decoration: underline dotted #00f;\n}"]}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.min.css">
+  <link rel="stylesheet" href="../dist/index.css"></link>
+  <script type="importmap">
+    {
+      "imports": {
+        "jodit": "../node_modules/jodit/esm/index.js",
+        "jodit/plugins/all": "../node_modules/jodit/esm/plugins/all.js",
+        "jodit-plugin-template": "../dist/index.module.mjs"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Jodit } from 'jodit';
+    import 'jodit/plugins/all';
+    import 'jodit-plugin-template';
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['template', 'source'],
+        sourceEditor: 'area',
+        templates: [
+          {
+            name: 'template1',
+            title: 'Template1',
+            html: '<p>Sample template1</p>'
+          },
+          {
+            name: 'template2',
+            title: 'Template2',
+            html: '<p>Sample template2</p>'
+          }
+        ]
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor"></textarea>
+</body>
+</html>

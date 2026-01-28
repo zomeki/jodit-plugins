@@ -1,0 +1,19 @@
+.jodit-wysiwyg {
+  jodit {
+    iframe {
+      pointer-events: none;
+    }
+  }
+}
+
+.jodit-ui-form__iframe-properties {
+  padding: 8px;
+
+  .jodit-ui-form__width,
+  .jodit-ui-form__height {
+    .jodit-ui-input__wrapper {
+      min-width: 6rem;
+      max-width: 6rem;
+    }
+  }
+}
