@@ -24,7 +24,7 @@ export default {
     {
       file: "dist/index.umd.js",
       format: "umd",
-      name: "JoditPluginTableCellType",
+      name: "JoditPluginCleanPaste",
       globals: {
         "jodit": "Jodit"
       },

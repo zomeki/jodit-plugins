@@ -1,14 +1,8 @@
 export default {
   en: {
-    iframePropsProperties: 'Iframe properties',
-    iframePropsWidth: 'Width',
-    iframePropsHeight: 'Height',
-    iframePropsTitle: 'Title'
+    iframePropsProperties: 'Iframe properties'
   },
   ja: {
-    iframePropsProperties: 'インラインフレームのプロパティ',
-    iframePropsWidth: '幅',
-    iframePropsHeight: '高さ',
-    iframePropsTitle: 'タイトル'
+    iframePropsProperties: 'インラインフレームのプロパティ'
   }
 };

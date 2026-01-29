@@ -1,4 +1,4 @@
-import { Jodit } from 'jodit';
+import Jodit from './jodit.js';
 
 export default class {
   init(jodit) {
@@ -42,15 +42,15 @@ export default class {
       }),
       width: new UIInput(this.jodit, {
         name: 'width',
-        label: this.jodit.i18n('iframePropsWidth')
+        label: this.jodit.i18n('Width')
       }),
       height: new UIInput(this.jodit, {
         name: 'height',
-        label: this.jodit.i18n('iframePropsHeight')
+        label: this.jodit.i18n('Height')
       }),
       title: new UIInput(this.jodit, {
         name: 'title',
-        label: this.jodit.i18n('iframePropsTitle')
+        label: this.jodit.i18n('Title')
       })
     };
 

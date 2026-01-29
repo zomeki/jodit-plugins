@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="../node_modules/jodit/es2021/jodit.fat.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.fat.min.css">
+  <script src="../dist/index.umd.js"></script>
+  <link rel="stylesheet" href="../dist/index.css"></link>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['anchor', 'table', 'audioTag', 'videoTag', 'template', 'source'],
+        sourceEditor: 'area',
+        askBeforePasteHTML: false,
+        defaultActionOnPaste: 'insert_by_clean_paste',
+        processPasteFromWord: true,
+        askBeforePasteFromWord: false,
+        defaultActionOnPasteFromWord: 'insert_by_clean_paste'
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor"></textarea>
+</body>
+</html>

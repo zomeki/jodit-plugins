@@ -1,4 +1,4 @@
-import { Jodit } from 'jodit';
+import Jodit from './jodit.js';
 import clean from './clean';
 
 const plugin = Jodit.plugins.get('paste-from-word');

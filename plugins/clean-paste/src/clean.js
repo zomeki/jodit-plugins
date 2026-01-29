@@ -1,4 +1,4 @@
-import { Jodit } from 'jodit';
+import Jodit from './jodit.js';
 
 const globalDocument = Jodit.constants.globalDocument;
 const Dom = Jodit.modules.Dom;

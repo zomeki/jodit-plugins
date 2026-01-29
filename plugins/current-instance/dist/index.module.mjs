@@ -1,2 +1,2 @@
-import{Jodit as t}from"jodit";class n{init(t){this.jodit=t,this.onFocusFunc=this.onFocus.bind(this),t.events.on("focus",this.onFocusFunc)}destruct(){this.jodit.events.off("focus",this.onFocusFunc),t.currentInstance===this.jodit&&(t.currentInstance=null)}onFocus(n){t.currentInstance=this.jodit}}t.plugins.add("current-instance",n);export{n as default};
+import*as t from"jodit";var n=t.Jodit||window.Jodit;class s{init(t){this.jodit=t,this.onFocusFunc=this.onFocus.bind(this),t.events.on("focus",this.onFocusFunc)}destruct(){this.jodit.events.off("focus",this.onFocusFunc),n.currentInstance===this.jodit&&(n.currentInstance=null)}onFocus(t){n.currentInstance=this.jodit}}n.plugins.add("current-instance",s);export{s as default};
 //# sourceMappingURL=index.module.mjs.map

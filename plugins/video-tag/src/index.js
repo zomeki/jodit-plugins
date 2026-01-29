@@ -1,4 +1,4 @@
-import { Jodit } from 'jodit';
+import Jodit from './jodit.js';
 import Plugin from './plugin.js';
 import lang from './lang.js';
 

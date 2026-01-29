@@ -1,4 +1,4 @@
-import { Jodit } from 'jodit';
+import Jodit from './jodit.js';
 
 export default class {
   init(jodit) {

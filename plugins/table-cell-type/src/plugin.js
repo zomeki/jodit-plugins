@@ -1,10 +1,10 @@
-import { Jodit } from 'jodit';
+import Jodit from './jodit.js';
 
 export default class {
   init(jodit) {
     this.jodit = jodit;
 
-    jodit.options.popup.cells = Jodit.atom([
+    jodit.options.popup.cells = [
       {
         name: 'cellToTH',
         text: 'TH',
@@ -23,7 +23,7 @@ export default class {
       },
       '\n',
       ...jodit.options.popup.cells
-    ]);
+    ];
   }
 
   convertTo(tag) {
