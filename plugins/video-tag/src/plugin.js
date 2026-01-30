@@ -1,3 +1,4 @@
+import Jodit from './jodit.js';
 import icon from './images/icon.svg';
 
 export default class {
@@ -12,45 +13,42 @@ export default class {
     };
   }
 
-  popupHTML() {
-    return `
-      <form class="jodit-ui-form">
-        <div class="jodit-ui-input">
-          <span class="jodit-ui-input__label">URL</span>
-          <div class="jodit-ui-input__wrapper">
-            <input type="text" placeholder="https://" class="jodit-ui-input__input" style="width: 150px;">
-          </div>
-        </div>
-        <div class="jodit-ui-block">
-          <button class="jodit-ui-button jodit-ui-button_variant_primary">${this.jodit.i18n('Insert')}</button>
-        </div>
-      </form>
-    `;
-  }
-
   popup(jodit, current, close) {
-    const wrapper = jodit.createInside.fromHTML(this.popupHTML());
-    const input = wrapper.querySelector('input');
-    const button = wrapper.querySelector('button');
+    const { UIForm, UIInput, Button } = Jodit.modules;
 
-    input.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        button.click();
-      }
+    const form = new UIForm(this.jodit);
+
+    const input = new UIInput(this.jodit, {
+      name: 'url',
+      label: 'URL',
+      required: true,
+      placeholder: 'https://'
     });
+
+    const button = new Button(this.jodit, 'ok', 'Insert', 'primary');
+
+    form.append(input);
+    form.append(button);
 
     jodit.selection.save();
 
-    button.addEventListener('click', event => {
-      if (input.value) {
+    button.onAction(() => {
+      if (form.validate()) {
         const html = this.buildHTML(input.value);
         jodit.selection.restore();
         jodit.selection.insertHTML(html);
+        close();
       }
-      close();
     });
 
-    return wrapper;
+    input.container.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        button.button.click();
+        event.preventDefault();
+      }
+    });
+
+    return form;
   }
 
   buildHTML(url) {

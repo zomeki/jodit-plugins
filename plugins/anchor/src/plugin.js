@@ -1,3 +1,4 @@
+import Jodit from './jodit.js';
 import icon from './images/icon.svg';
 
 export default class AnchorPlugin {
@@ -11,41 +12,39 @@ export default class AnchorPlugin {
       popup: this.popup.bind(this),
       isActive: this.isActive.bind(this)
     };
+
+    this.afterEnterFunc = this.afterEnter.bind(this);
+    jodit.events.on('afterEnter', this.afterEnterFunc);
   }
 
-  popupHTML() {
-    return `
-      <form class="jodit-ui-form">
-        <div class="jodit-ui-input">
-          <span class="jodit-ui-input__label">${this.jodit.i18n('anchorAnchorID')}</span>
-          <div class="jodit-ui-input__wrapper">
-            <input type="text" class="jodit-ui-input__input" style="width: 150px;">
-          </div>
-        </div>
-        <div class="jodit-ui-block">
-          <button class="jodit-ui-button jodit-ui-button_variant_primary">${this.jodit.i18n('anchorSet')}</button>
-        </div>
-      </form>
-    `;
+  destruct() {
+    this.jodit.events.off('afterEnter', this.afterEnterFunc);
   }
 
   popup(jodit, current, close) {
-    const wrapper = jodit.createInside.fromHTML(this.popupHTML());
-    const input = wrapper.querySelector('input');
-    const button = wrapper.querySelector('button');
+    const { UIForm, UIInput, Button } = Jodit.modules;
+
+    const form = new UIForm(this.jodit);
+
+    const input = new UIInput(this.jodit, {
+      name: 'id',
+      label: 'anchorAnchorID'
+    });
+
+    const button = new Button(this.jodit, 'ok', 'anchorSet', 'primary');
+
+    form.append(input);
+    form.append(button);
+
     const target = this.currentElement();
 
     if (target && target.id) {
       input.value = target.id;
     }
 
-    input.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        button.click();
-      }
-    });
+    jodit.selection.save();
 
-    button.addEventListener('click', event => {
+    button.onAction(() => {
       if (target) {
         const id = input.value.trim();
         if (id) {
@@ -58,12 +57,36 @@ export default class AnchorPlugin {
       close();
     });
 
-    return wrapper;
+    input.container.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        button.button.click();
+        event.preventDefault();
+      }
+    });
+
+    return form;
   }
 
   isActive(jodit) {
     const elem = this.currentElement();
     return elem && elem.hasAttribute('id');
+  }
+
+  afterEnter(event) {
+    let current = this.jodit.selection.current()
+    if (!current) return;
+    if (current.nodeType !== 1) current = current.parentElement;
+
+    const previous = current.previousElementSibling;
+    if (!previous) return;
+
+    if (current.hasAttribute('id') && previous.hasAttribute('id') && current.id === previous.id) {
+      if (previous.childNodes.length === 1 && previous.childNodes[0].tagName == 'BR') {
+        previous.removeAttribute('id');
+      } else {
+        current.removeAttribute('id');
+      }
+    }
   }
 
   currentElement() {
@@ -78,12 +101,16 @@ export default class AnchorPlugin {
 
     if (node.nodeType === Node.TEXT_NODE) {
       if (node.textContent === '\uFEFF' && node.previousElementSibling?.matches('jodit-media')) {
-        return node.previousElementSibling.querySelector('video') || node.previousElementSibling.querySelector('audio');
+        return node.previousElementSibling.querySelector('video, audio');
       } else {
         return node.parentElement;
       }
     } else if (node.matches('jodit')) {
       return node.querySelector('iframe');
+    } else if (node.matches('jodit-media')) {
+      return node.querySelector('video, audio');
+    } else if (node.matches('span[id^="jodit-selection_marker"]')) {
+      return node.parentNode;
     }
     return node;
   }
