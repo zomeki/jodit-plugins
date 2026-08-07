@@ -1,7 +1,7 @@
 {
   "name": "@zomeki/jodit-plugin-current-instance",
   "description": "A jodit plugin to memory current instance",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
   "umd:main": "./dist/index.umd.js",

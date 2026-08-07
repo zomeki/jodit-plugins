@@ -1,7 +1,7 @@
 {
   "name": "@zomeki/jodit-plugin-clean-paste",
   "description": "A jodit plugin to paste clean html with a table including merged cells",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
   "umd:main": "./dist/index.umd.js",
