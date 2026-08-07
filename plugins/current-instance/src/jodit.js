@@ -1,3 +1,5 @@
 import * as module from 'jodit';
 
-export default module.Jodit || window.Jodit;
+const Jodit = module.Jodit || module.default || globalThis.Jodit || module;
+
+export default Jodit;

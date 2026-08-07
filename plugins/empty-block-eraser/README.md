@@ -4,7 +4,7 @@ A jodit plugin to erase an empty block.
 
 ## Dependencies
 
-* jodit 4.7
+* jodit 4.13+
 
 ## License
 

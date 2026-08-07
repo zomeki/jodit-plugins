@@ -4,7 +4,7 @@ const globalDocument = Jodit.constants.globalDocument;
 const Dom = Jodit.modules.Dom;
 const { toArray, trim } = Jodit.modules.Helpers;
 
-// patch for https://github.com/xdan/jodit/blob/4.7.9/src/core/helpers/html/clean-from-word.ts
+// patch for https://github.com/xdan/jodit/blob/4.13.16/src/core/helpers/html/clean-from-word.ts
 export default function(html) {
   if (html.indexOf('<html ') !== -1) {
     html = html.substring(html.indexOf('<html '), html.length);
@@ -43,6 +43,22 @@ export default function(html) {
                 break;
 
               default:
+								// Word marks its auto-generated list markers
+								// (the literal bullet/number, e.g. `1.` or `·`)
+								// with `mso-list:Ignore`. They are display-only
+								// and must not be imported, otherwise the marker
+								// text leaks into the content. See #948
+								if (
+									/mso-list:\s*ignore/i.test(
+										node.getAttribute(
+											'style'
+										) || ''
+									)
+								) {
+									marks.push(node);
+									break;
+								}
+
                 toArray(node.attributes).forEach(
                   (attr) => {
                     if (

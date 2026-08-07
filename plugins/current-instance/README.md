@@ -4,7 +4,7 @@ A jodit plugin to memory current instance.
 
 ## Dependencies
 
-* jodit 4.7
+* jodit 4.13+
 
 ## License
 

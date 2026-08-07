@@ -4,7 +4,7 @@ A jodit plugin to paste clean html with a table including merged cells.
 
 ## Dependencies
 
-* jodit 4.7
+* jodit 4.13+
 
 ## License
 

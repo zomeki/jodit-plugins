@@ -4,7 +4,7 @@ Extra plugins for jodit.
 
 ## Dependencies
 
-* jodit 4.7
+* jodit 4.13+
 
 ## Plugins
 
@@ -14,7 +14,6 @@ Extra plugins for jodit.
 * [clean-paste](plugins/clean-paste)
 * [current-instance](plugins/current-instance)
 * [empty-block-eraser](plugins/empty-block-eraser)
-* [html-sanitizer](plugins/html-sanitizer)
 * [iframe-props](plugins/iframe-props)
 * [table-cell-type](plugins/table-cell-type)
 * [template](plugins/template)

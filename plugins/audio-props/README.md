@@ -4,7 +4,7 @@ A jodit plugin to edit properties for audio tag.
 
 ## Dependencies
 
-* jodit 4.7
+* jodit 4.13+
 
 ## License
 

@@ -4,7 +4,7 @@ A jodit plugin to change type of table cells.
 
 ## Dependencies
 
-* jodit 4.7
+* jodit 4.13+
 
 ## License
 

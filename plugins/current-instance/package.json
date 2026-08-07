@@ -18,9 +18,6 @@
     "build": "rollup -c",
     "start": "http-server -c-1"
   },
-  "dependencies": {
-    "jodit": ">=4.7.9"
-  },
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
@@ -37,5 +34,8 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.97.2"
+  },
+  "peerDependencies": {
+    "jodit": ">=4.13.16"
   }
 }
