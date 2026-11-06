@@ -9,6 +9,7 @@ import '../plugins/empty-block-eraser';
 import '../plugins/iframe-props';
 import '../plugins/iframe-props/dist/index.css';
 import '../plugins/table-cell-type';
+import '../plugins/table-caption';
 import '../plugins/template';
 import '../plugins/video-props';
 import '../plugins/video-props/dist/index.css';
