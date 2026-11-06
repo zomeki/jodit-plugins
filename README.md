@@ -16,6 +16,7 @@ Extra plugins for jodit.
 * [empty-block-eraser](plugins/empty-block-eraser)
 * [iframe-props](plugins/iframe-props)
 * [table-cell-type](plugins/table-cell-type)
+* [table-caption](plugins/table-caption)
 * [template](plugins/template)
 * [video-props](plugins/video-props)
 * [video-tag](plugins/video-tag)

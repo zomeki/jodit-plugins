@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.3.0
+
+* Add `table-caption` plugin.
+* Update `clean-paste` plugin.
+
 ## 0.2.0
 
 * Update jodit to 4.13.
