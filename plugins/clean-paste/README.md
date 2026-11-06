@@ -1,6 +1,6 @@
 # jodit-plugin-clean-patch
 
-A jodit plugin to paste clean html with a table including merged cells.
+A Jodit plugin to paste clean HTML while preserving basic attributes and styles.
 
 ## Dependencies
 
