@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="../../../node_modules/jodit/es2021/jodit.fat.min.js"></script>
+  <link rel="stylesheet" href="../../../node_modules/jodit/es2021/jodit.fat.min.css">
+  <script src="../dist/index.umd.js"></script>
+  <link rel="stylesheet" href="../dist/index.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['source'],
+        sourceEditor: 'area'
+      });
+      jodit.selection.insertHTML('<video controls src="https://download.samplelib.com/mp4/sample-5s.mp4" width="300px"></video>');
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor"></textarea>
+</body>
+</html>

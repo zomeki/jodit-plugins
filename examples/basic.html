@@ -26,7 +26,10 @@
         defaultActionOnPaste: 'insert_by_clean_paste',
         processPasteFromWord: true,
         askBeforePasteFromWord: false,
-        defaultActionOnPasteFromWord: 'insert_by_clean_paste'
+        defaultActionOnPasteFromWord: 'insert_by_clean_paste',
+        cleanHTML: {
+          denyTags: 'script,object,embed' // allow iframe
+        }
       });
     });
   </script>

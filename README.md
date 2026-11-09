@@ -4,7 +4,7 @@ Extra plugins for jodit.
 
 ## Dependencies
 
-* jodit 4.13+
+* jodit 4.19+
 
 ## Plugins
 

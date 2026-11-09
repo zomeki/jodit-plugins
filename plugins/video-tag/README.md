@@ -4,7 +4,7 @@ A jodit plugin to insert a video tag.
 
 ## Dependencies
 
-* jodit 4.13+
+* jodit 4.19+
 
 ## License
 

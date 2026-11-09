@@ -1,108 +1,30 @@
 import Jodit from './jodit.js';
 
 const globalDocument = Jodit.constants.globalDocument;
-const Dom = Jodit.modules.Dom;
-const { toArray, trim } = Jodit.modules.Helpers;
+const { cleanFromWord, toArray } = Jodit.modules.Helpers;
 
-// patch for https://github.com/xdan/jodit/blob/4.13.16/src/core/helpers/html/clean-from-word.ts
 export default function(html) {
-  if (html.indexOf('<html ') !== -1) {
-    html = html.substring(html.indexOf('<html '), html.length);
-    html = html.substring(
-      0,
-      html.lastIndexOf('</html>') + '</html>'.length
-    );
-  }
+  const original = globalDocument.createElement('div');
+  original.innerHTML = html;
 
-  let convertedString = '';
+  const spans = toArray(original.querySelectorAll('td, th')).map(cell => ({
+    colspan: cell.getAttribute('colspan'),
+    rowspan: cell.getAttribute('rowspan')
+  }));
 
-  try {
-    const div = globalDocument.createElement('div');
-    div.innerHTML = html;
+  const cleaned = globalDocument.createElement('div');
+  cleaned.innerHTML = cleanFromWord(html);
 
-    const marks = [];
+  toArray(cleaned.querySelectorAll('td, th')).forEach((cell, index) => {
+    const attributes = spans[index];
+    if (!attributes) return;
 
-    if (div.firstChild) {
-      Dom.each(div, node => {
-        if (!node) {
-          return;
-        }
-        switch (node.nodeType) {
-          case Node.ELEMENT_NODE:
-            switch (node.nodeName) {
-              case 'STYLE':
-              case 'LINK':
-              case 'META':
-                marks.push(node);
-                break;
+    ['colspan', 'rowspan'].forEach(name => {
+      if (attributes[name] !== null) {
+        cell.setAttribute(name, attributes[name]);
+      }
+    });
+  });
 
-              case 'W:SDT':
-              case 'W:SDTPR':
-              case 'FONT':
-                Dom.unwrap(node);
-                break;
-
-              default:
-								// Word marks its auto-generated list markers
-								// (the literal bullet/number, e.g. `1.` or `·`)
-								// with `mso-list:Ignore`. They are display-only
-								// and must not be imported, otherwise the marker
-								// text leaks into the content. See #948
-								if (
-									/mso-list:\s*ignore/i.test(
-										node.getAttribute(
-											'style'
-										) || ''
-									)
-								) {
-									marks.push(node);
-									break;
-								}
-
-                toArray(node.attributes).forEach(
-                  (attr) => {
-                    if (
-                      [
-                        'src',
-                        'href',
-                        'rel',
-                        'content',
-                        // patch start
-                        'colspan',
-                        'rowspan'
-                        // patch end
-                      ].indexOf(
-                        attr.name.toLowerCase()
-                      ) === -1
-                    ) {
-                      node.removeAttribute(
-                        attr.name
-                      );
-                    }
-                  }
-                );
-            }
-            break;
-          case Node.TEXT_NODE:
-            break;
-          default:
-            marks.push(node);
-        }
-      });
-    }
-
-    Dom.safeRemove.apply(null, marks);
-
-    convertedString = div.innerHTML;
-  } catch (e) {}
-
-  if (convertedString) {
-    html = convertedString;
-  }
-
-  html = html.split(/(\n)/).filter(trim).join('\n');
-
-  return html
-    .replace(/<(\/)?(html|colgroup|col|o:p)[^>]*>/g, '')
-    .replace(/<!--[^>]*>/g, '');
+  return cleaned.innerHTML;
 }

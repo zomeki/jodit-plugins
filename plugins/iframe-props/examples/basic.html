@@ -21,7 +21,10 @@
     document.addEventListener('DOMContentLoaded', (event) => {
       const jodit = Jodit.make('#editor', {
         buttons: ['source'],
-        sourceEditor: 'area'
+        sourceEditor: 'area',
+        cleanHTML: {
+          denyTags: 'script,object,embed' // allow iframe
+        }
       });
       jodit.selection.insertHTML('<iframe src="./iframe-content.html" width="300px" height="200px"></iframe>');
     });

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="../../../node_modules/jodit/es2021/jodit.fat.min.js"></script>
+  <link rel="stylesheet" href="../../../node_modules/jodit/es2021/jodit.fat.min.css">
+  <script src="../dist/index.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['template', 'source'],
+        sourceEditor: 'area',
+        templates: [
+          {
+            name: 'template1',
+            title: 'Template1',
+            html: '<p>Sample template1</p>'
+          },
+          {
+            name: 'template2',
+            title: 'Template2',
+            html: '<p>Sample template2</p>'
+          }
+        ]
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <textarea id="editor"></textarea>
+</body>
+</html>

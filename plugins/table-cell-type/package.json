@@ -36,6 +36,6 @@
     "sass": "^1.97.2"
   },
   "peerDependencies": {
-    "jodit": ">=4.13.16"
+    "jodit": ">=4.19.10"
   }  
 }
