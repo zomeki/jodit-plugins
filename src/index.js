@@ -1,7 +1,5 @@
 import '../plugins/anchor';
 import '../plugins/anchor/dist/index.css';
-import '../plugins/audio-props';
-import '../plugins/audio-props/dist/index.css';
 import '../plugins/audio-tag';
 import '../plugins/clean-paste';
 import '../plugins/current-instance';
@@ -10,6 +8,4 @@ import '../plugins/iframe-props';
 import '../plugins/iframe-props/dist/index.css';
 import '../plugins/table-cell-type';
 import '../plugins/template';
-import '../plugins/video-props';
-import '../plugins/video-props/dist/index.css';
 import '../plugins/video-tag';

@@ -9,7 +9,6 @@ Extra plugins for jodit.
 ## Plugins
 
 * [anchor](plugins/anchor)
-* [audio-props](plugins/audio-props)
 * [audio-tag](plugins/audio-tag)
 * [clean-paste](plugins/clean-paste)
 * [current-instance](plugins/current-instance)
@@ -17,7 +16,6 @@ Extra plugins for jodit.
 * [iframe-props](plugins/iframe-props)
 * [table-cell-type](plugins/table-cell-type)
 * [template](plugins/template)
-* [video-props](plugins/video-props)
 * [video-tag](plugins/video-tag)
 
 ## License
