@@ -8,5 +8,6 @@ import '../plugins/iframe-props';
 import '../plugins/iframe-props/dist/index.css';
 import '../plugins/table-cell-type';
 import '../plugins/table-caption';
+import '../plugins/table-plain';
 import '../plugins/template';
 import '../plugins/video-tag';

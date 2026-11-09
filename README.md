@@ -16,6 +16,7 @@ Extra plugins for jodit.
 * [iframe-props](plugins/iframe-props)
 * [table-cell-type](plugins/table-cell-type)
 * [table-caption](plugins/table-caption)
+* [table-plain](plugins/table-plain)
 * [template](plugins/template)
 * [video-tag](plugins/video-tag)
 
