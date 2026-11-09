@@ -15,7 +15,7 @@ export default class {
 
   onCustomPasteHTMLOption(action, html) {
     if (action === 'insert_by_clean_paste') {
-      return clean(html);
+      return clean(html, this.jodit.options.cleanPasteAllowedAttributes, this.jodit.options.cleanPasteAllowedStyles);
     }
   }
 }
