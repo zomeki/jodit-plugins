@@ -1,7 +1,7 @@
 {
   "name": "@zomeki/jodit-plugin-clean-paste",
   "description": "A jodit plugin to paste clean html while preserving basic attributes and styles",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
   "umd:main": "./dist/index.umd.js",

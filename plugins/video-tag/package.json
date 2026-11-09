@@ -1,7 +1,7 @@
 {
   "name": "@zomeki/jodit-plugin-video-tag",
   "description": "A jodit plugin to insert a video tag",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
   "umd:main": "./dist/index.umd.js",
