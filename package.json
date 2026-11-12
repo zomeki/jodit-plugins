@@ -1,7 +1,7 @@
 {
   "name": "@zomeki/jodit-plugins",
   "description": "Extra plugins for jodit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
   "umd:main": "./dist/index.umd.js",

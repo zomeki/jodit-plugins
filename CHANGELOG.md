@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.4.0
+
+* Add `video-props` plugin.
+* Remove `iframe-props` plugin.
+
 ## 0.3.0
 
 * Update jodit to 4.19.
