@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="../node_modules/jodit/es2021/jodit.fat.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/jodit/es2021/jodit.fat.min.css">
+  <script src="../dist/index.umd.js"></script>
+  <link rel="stylesheet" href="../dist/index.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const jodit = Jodit.make('#editor', {
+        buttons: ['source'],
+        sourceEditor: 'area',
+        cleanHTML: {
+          denyTags: 'script,object,embed' // allow iframe
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Basic use</h1>
+  <p>Double-click a video, audio, or iframe to open its properties and edit the title.</p>
+  <textarea id="editor">
+    <video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" controls width="320" height="180" title="Sample video" ></video>
+    <audio src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" controls title="Sample audio"></audio>
+    <iframe src="/examples/index.html" width="320" height="180" title="Sample iframe"></iframe>
+  </textarea>
+</body>
+</html>

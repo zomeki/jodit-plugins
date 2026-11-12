@@ -18,6 +18,7 @@ Extra plugins for jodit.
 * [table-caption](plugins/table-caption)
 * [table-plain](plugins/table-plain)
 * [template](plugins/template)
+* [video-props](plugins/video-props)
 * [video-tag](plugins/video-tag)
 
 ## License

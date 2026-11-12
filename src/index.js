@@ -10,4 +10,6 @@ import '../plugins/table-cell-type';
 import '../plugins/table-caption';
 import '../plugins/table-plain';
 import '../plugins/template';
+import '../plugins/video-props';
+import '../plugins/video-props/dist/index.css';
 import '../plugins/video-tag';

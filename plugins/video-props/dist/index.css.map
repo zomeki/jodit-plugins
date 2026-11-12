@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,4BACE,mBACF","file":"index.css","sourcesContent":[".jodit-wysiwyg jodit iframe {\n  pointer-events: none;\n}"]}
