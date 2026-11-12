@@ -13,7 +13,6 @@ Extra plugins for jodit.
 * [clean-paste](plugins/clean-paste)
 * [current-instance](plugins/current-instance)
 * [empty-block-eraser](plugins/empty-block-eraser)
-* [iframe-props](plugins/iframe-props)
 * [table-cell-type](plugins/table-cell-type)
 * [table-caption](plugins/table-caption)
 * [table-plain](plugins/table-plain)

@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,oBACE,6CAAsC,CAAtC,qCACF,CAEA,kCACE,WACF,CACA,mKAGE,cAAe,CADf,cAEF,CAXA,4BACE,mBACF","file":"index.css","sourcesContent":[".jodit-wysiwyg jodit iframe {\n  pointer-events: none;\n}"]}
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,oBACE,6CAAsC,CAAtC,qCACF,CAFA,4BACE,mBACF","file":"index.css","sourcesContent":[".jodit-wysiwyg jodit iframe {\n  pointer-events: none;\n}"]}

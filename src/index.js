@@ -4,8 +4,6 @@ import '../plugins/audio-tag';
 import '../plugins/clean-paste';
 import '../plugins/current-instance';
 import '../plugins/empty-block-eraser';
-import '../plugins/iframe-props';
-import '../plugins/iframe-props/dist/index.css';
 import '../plugins/table-cell-type';
 import '../plugins/table-caption';
 import '../plugins/table-plain';
