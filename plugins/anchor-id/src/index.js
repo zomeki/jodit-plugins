@@ -10,6 +10,6 @@ Object.keys(lang).forEach(locale => {
   }
 });
 
-Jodit.plugins.add('anchor', Plugin);
+Jodit.plugins.add('anchor-id', Plugin);
 
 export default Plugin;

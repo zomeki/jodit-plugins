@@ -1,5 +1,5 @@
-import '../plugins/anchor';
-import '../plugins/anchor/dist/index.css';
+import '../plugins/anchor-id';
+import '../plugins/anchor-id/dist/index.css';
 import '../plugins/audio-tag';
 import '../plugins/clean-paste';
 import '../plugins/current-instance';

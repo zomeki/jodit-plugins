@@ -1,5 +1,5 @@
 {
-  "name": "@zomeki/jodit-plugin-anchor",
+  "name": "@zomeki/jodit-plugin-anchor-id",
   "description": "A jodit plugin to edit html id for anchor",
   "version": "0.3.0",
   "source": "src/index.js",

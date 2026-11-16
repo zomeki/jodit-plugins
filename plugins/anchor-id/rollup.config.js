@@ -24,7 +24,7 @@ export default {
     {
       file: "dist/index.umd.js",
       format: "umd",
-      name: "JoditPluginAnchor",
+      name: "JoditPluginAnchorId",
       globals: {
         "jodit": "Jodit"
       },

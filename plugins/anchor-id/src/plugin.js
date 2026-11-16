@@ -5,10 +5,10 @@ export default class AnchorPlugin {
   init(jodit) {
     this.jodit = jodit;
 
-    jodit.options.controls.anchor = {
-      name: 'anchor',
+    jodit.options.controls.anchorId = {
+      name: 'anchorId',
       icon: icon,
-      tooltip: jodit.i18n('anchorSetAnchor'),
+      tooltip: jodit.i18n('anchorIdSetAnchor'),
       popup: this.popup.bind(this),
       isActive: this.isActive.bind(this)
     };
@@ -28,10 +28,10 @@ export default class AnchorPlugin {
 
     const input = new UIInput(this.jodit, {
       name: 'id',
-      label: 'anchorAnchorID'
+      label: 'anchorIdAnchorID'
     });
 
-    const button = new Button(this.jodit, 'ok', 'anchorSet', 'primary');
+    const button = new Button(this.jodit, 'ok', 'anchorIdSet', 'primary');
 
     form.append(input);
     form.append(button);

@@ -1,4 +1,4 @@
-# jodit-plugin-anchor
+# jodit-plugin-anchor-id
 
 A jodit plugin to edit html id for anchor.
 

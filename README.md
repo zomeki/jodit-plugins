@@ -8,7 +8,7 @@ Extra plugins for jodit.
 
 ## Plugins
 
-* [anchor](plugins/anchor)
+* [anchor-id](plugins/anchor-id)
 * [audio-tag](plugins/audio-tag)
 * [clean-paste](plugins/clean-paste)
 * [current-instance](plugins/current-instance)
