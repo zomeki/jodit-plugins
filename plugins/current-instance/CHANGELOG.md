@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.0
+
+* Update jodit to 4.20.
+
 ## 0.3.0
 
 * Update jodit to 4.19.

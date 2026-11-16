@@ -1,7 +1,7 @@
 {
   "name": "@zomeki/jodit-plugin-table-plain",
   "description": "A jodit plugin to remove widths and border-collapse styles from newly inserted tables",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
   "umd:main": "./dist/index.umd.js",

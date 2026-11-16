@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.5.0
+
+* Update jodit to 4.20.
+* Rename `anchor` plugin to `anchor-id` plugin.
+
 ## 0.4.0
 
 * Add `video-props` plugin.

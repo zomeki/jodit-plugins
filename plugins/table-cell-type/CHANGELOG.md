@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.4.0
+
+* Update jodit to 4.20.
+* Recalculate position of popup after changing cell types.
+
 ## 0.3.0
 
 * Update jodit to 4.19.
