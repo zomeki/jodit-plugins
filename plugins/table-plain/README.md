@@ -4,7 +4,7 @@ A Jodit plugin to remove width attributes and styles from newly inserted tables.
 
 ## Dependencies
 
-* jodit 4.19+
+* jodit 4.20+
 
 ## License
 

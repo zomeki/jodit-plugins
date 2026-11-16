@@ -4,7 +4,7 @@ A Jodit plugin to add captions to tables.
 
 ## Dependencies
 
-* jodit 4.19+
+* jodit 4.20+
 
 ## License
 

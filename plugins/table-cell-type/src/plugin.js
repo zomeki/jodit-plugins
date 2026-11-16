@@ -31,12 +31,17 @@ export default class {
     if (!table) return;
 
     table.getAllSelectedCells().forEach(cell => {
-      table.removeSelection(cell);
       if (cell.tagName.toLowerCase() !== tag) {
+        table.removeSelection(cell);
         const newCell = this.createNewCell(cell, tag);
         cell.parentNode.replaceChild(newCell, cell);
+        table.addSelection(newCell);
       }
     });
+
+    if (table.getAllSelectedCells().some(cell => cell.isConnected)) {
+      this.jodit.events.fire('recalcPositionPopup');
+    }
   }
 
   createNewCell(cell, tag) {

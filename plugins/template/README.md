@@ -4,7 +4,7 @@ A jodit plugin to insert static template html.
 
 ## Dependencies
 
-* jodit 4.19+
+* jodit 4.20+
 
 ## License
 

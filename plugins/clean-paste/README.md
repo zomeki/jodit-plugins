@@ -14,7 +14,7 @@ Jodit.make('#editor', {
 
 ## Dependencies
 
-* jodit 4.19+
+* jodit 4.20+
 
 ## License
 
